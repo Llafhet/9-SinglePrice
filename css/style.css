@@ -1,0 +1,165 @@
+:root{
+/* ### Primary */
+--Teal5: hsl(179, 62%, 43%);
+--Green4: hsl(71, 73%, 54%);
+/* ### Neutral */
+--Teal1: hsl(204, 43%, 93%);
+--Gray5: hsl(218, 22%, 67%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: "Karla", sans-serif;
+    background-color: hsl(215, 16%, 70%);
+}
+
+/* ================= CONTAINER PRINCIPAL ================= */
+.container{
+    margin: 0 auto;
+    margin-top: 120px;
+
+    width: 90%;
+    /* Se elimina porque cada hijo calculaba su propio ancho */
+
+    max-width: 700px; /* ✅ Nuevo: el ancho lo controla SOLO el padre */
+    border-radius: .5em; /* ✅ Nuevo */
+    overflow: hidden;    /* ✅ Nuevo: evita que se rompan los bordes */
+}
+
+/* ================= TEXTS ================= */
+.texts__container{
+    background-color: var(--Teal1);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+    /* Eliminados para que no se desalineen */
+}
+
+.texts{
+    background-color: var(--Teal1);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+
+    padding: 2rem; /* ✅ Se usa padding en lugar de width */
+}
+
+.title{
+    padding: 20px 0;
+    color: var(--Teal5);
+}
+
+.subtitle{
+    color: var(--Green4);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.paragraph{
+    color: var(--Gray5);
+    padding-bottom: 20px;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/* ================= SUBSCRIPTION ================= */
+.suscription__container{
+    background-color: var(--Teal5);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+}
+
+.suscription{
+    background-color: var(--Teal5);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+
+    padding: 2rem; /* ✅ */
+    display: flex;
+    flex-direction: column;
+}
+
+.suscription__title{
+    color: var(--Teal1);
+    padding-top: 20px;
+}
+
+.price{
+    color: var(--Teal1);
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+.month{
+    color: var(--Teal1);
+    font-weight:600;
+    font-size: 1rem;
+}
+
+.suscription__text{
+    color: var(--Teal1);
+    margin-top: 10px;
+}
+
+.buton{
+    text-align: center;
+    color: var(--Teal1);
+    background-color: var(--Green4);
+    margin: 20px 0;
+    padding: 1em 0;
+    border-radius: .5em; /* 🔧 Ajuste leve */
+    font-weight: 800;
+}
+
+/* ================= WHY US ================= */
+.us__container{
+    background-color: var(--Green4);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+
+    /* ❌ border-radius: 0 0 .5em .5em; */
+    /* Se controla ahora desde el contenedor padre */
+}
+
+.us{
+    background-color: var(--Green4);
+
+    /* ❌ width: 90%; */
+    /* ❌ margin: 0 auto; */
+
+    padding: 2rem; /* ✅ */
+}
+
+.us__title{
+    color: var(--Teal1);
+    padding: 15px 0;
+}
+
+.us__paragraph{
+    color: var(--Teal1);
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width:768px){
+
+    /* ❌ Se elimina inline-block */
+    /* ❌ Se eliminan width:45% y height */
+
+    .container{
+        display: grid; /* ✅ Nuevo */
+        grid-template-columns: 1fr 1fr; /* ✅ */
+    }
+
+    .texts__container{
+        grid-column: 1 / -1; /* ✅ Ocupa todo el ancho */
+    }
+}
